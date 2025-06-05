@@ -1,23 +1,150 @@
-body {
-  font-family: sans-serif;
+/* ────────────────────────────────────────────────────────────
+   1. CSS Variables (Light and Dark Colors)
+   ──────────────────────────────────────────────────────────── */
+:root {
+  /* Light mode colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #fafafa;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555555;
+  --accent: #ff69b4; /* pink accent */
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  /* Dark mode overrides */
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --text-primary: #eeeeee;
+  --text-secondary: #bbbbbb;
+  --accent: #ff69b4; /* same accent, still pops */
+  --card-bg: #1e1e1e;
+  --card-shadow: rgba(0, 0, 0, 0.5);
+}
+
+/* ────────────────────────────────────────────────────────────
+   2. Global Reset & Base Styles
+   ──────────────────────────────────────────────────────────── */
+* {
   margin: 0;
   padding: 0;
-  background: #fff0f5;
-  color: #333;
+  box-sizing: border-box;
 }
-header {
-  background: #ff69b4;
-  color: white;
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ────────────────────────────────────────────────────────────
+   3. Header + Dark Mode Toggle
+   ──────────────────────────────────────────────────────────── */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--accent);
+  color: #fff;
+  padding: 1rem 2rem;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+}
+
+.theme-toggle {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ────────────────────────────────────────────────────────────
+   4. Container + Card Layout
+   ──────────────────────────────────────────────────────────── */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.card {
+  background: var(--card-bg);
+  box-shadow: 0 2px 8px var(--card-shadow);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* ────────────────────────────────────────────────────────────
+   5. Map Styles
+   ──────────────────────────────────────────────────────────── */
+.map-container {
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* ────────────────────────────────────────────────────────────
+   6. Calendar Styles
+   ──────────────────────────────────────────────────────────── */
+#calendar {
+  width: 100%;
+}
+
+/* ────────────────────────────────────────────────────────────
+   7. Weather Card Styles
+   ──────────────────────────────────────────────────────────── */
+.weather-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+.weather-card {
+  background: var(--card-bg);
+  box-shadow: 0 2px 6px var(--card-shadow);
+  border-radius: 8px;
   padding: 1rem;
+  width: 140px;
   text-align: center;
 }
-main {
-  padding: 2rem;
+
+.weather-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: var(--text-primary);
 }
-section {
-  margin-bottom: 2rem;
-  padding: 1rem;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  background: white;
+
+.weather-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* ────────────────────────────────────────────────────────────
+   8. Utility Helpers
+   ──────────────────────────────────────────────────────────── */
+.hidden {
+  display: none;
 }

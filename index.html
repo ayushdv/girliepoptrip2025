@@ -1,22 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Girl Trip India 2025</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>🌸 Girlie-pop Trip India 2025 🌸</h1>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Girlie-Pops Trip India 2025</title>
 
-  <main>
-    <section id="map">Loading map...</section>
-    <section id="calendar">Loading calendar...</section>
-    <section id="weather">Loading weather...</section>
-  </main>
+    <!-- Leaflet (Map) CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-sA+o6qM+byhU6Xwt/r0sN2uZF3yOKxgXgkR8m8l4vWc="
+      crossorigin=""
+    />
 
-  <script src="script.js"></script>
-</body>
+    <!-- FullCalendar (Calendar) CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css"
+      integrity="sha256-+hXW8c+OWDXnA2MkH55iqzIGKOgWqWM/A3GufLvfRAI="
+      crossorigin="anonymous"
+    />
+
+    <!-- Your own stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Header with Dark Mode Toggle -->
+    <header class="header">
+      <h1>🌸 Girl Trip India 2025 🌸</h1>
+      <button id="theme-toggle" class="theme-toggle">🌙 Dark Mode</button>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+      <!-- Map Section -->
+      <section class="card" id="map-section">
+        <h2>📍 Map</h2>
+        <div id="map" class="map-container">Loading map…</div>
+      </section>
+
+      <!-- Calendar Section -->
+      <section class="card" id="calendar-section">
+        <h2>📅 Itinerary Calendar</h2>
+        <div id="calendar"></div>
+      </section>
+
+      <!-- Weather Section -->
+      <section class="card" id="weather-section">
+        <h2>🌦️ Weather Forecast</h2>
+        <div id="weather-cards" class="weather-flex">
+          Loading weather…
+        </div>
+      </section>
+    </main>
+
+    <!-- Scripts at end for faster load -->
+    <!-- Leaflet JS (Map) -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-o9N1j+OsyqSNbF6rP2KYdf4dqnOUY6TshkMtyLf0TsY="
+      crossorigin=""
+    ></script>
+
+    <!-- FullCalendar JS (Calendar) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js"
+      integrity="sha256-CheAnkJ8FWBhCVbYPYNXjF6GsGGdHJ2H6kUSRCdF4qM="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Your own JS -->
+    <script src="script.js"></script>
+  </body>
 </html>
