@@ -1,0 +1,23 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff0f5;
+  color: #333;
+}
+header {
+  background: #ff69b4;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+main {
+  padding: 2rem;
+}
+section {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background: white;
+}
